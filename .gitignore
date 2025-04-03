@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs and debug
+npm-debug.log
+yarn-error.log
+
+# OS or Editor files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bedrock Passport Widget Test</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: #f7f7f7; padding: 2rem;">
+  <h1>Bedrock Passport Single-File Test</h1>
+
+  <!-- The container for the widget -->
+  <div id="login-widget" style="margin: 0 auto; width: 100%; max-width: 480px;"></div>
+
+  <!-- 1) Load your single-file bundle -->
+  <script src="dist/passport-widget.js"></script>
+
+  <!-- 2) Call .init() to initialize -->
+  <script>
+    // After the script above loads, BedrockPassport.init should be available
+    BedrockPassport.init({
+      target: '#login-widget',
+      tenantId: 'orange-vibe', // Replace with your real tenant ID
+      callbackUrl: 'https://example.com/auth/callback', // Replace with a real callback or local route
+      showWalletConnect: true, // or false if you don’t need it
+      styling: {
+        title: 'Sign In',
+        panelClass: 'container p-4 bg-white rounded shadow max-w-md mx-auto',
+      },
+      onLogin: (user) => {
+        console.log('✅ onLogin callback fired with user:', user);
+        alert(`Welcome, ${user.email || 'User'}!`);
+      },
+      onError: (error) => {
+        console.error('❌ onError callback fired:', error);
+        alert('There was an error during authentication. Check console for details.');
+      }
+    });
+  </script>
+</body>
+</html>

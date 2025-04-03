@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    // This ensures we can import ESM modules, etc.
+    "module": "ESNext",
+    "target": "ES2020",
+
+    // The key line: enable JSX in TSX files:
+    "jsx": "react",
+
+    // Strictness + basic recommended settings
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src"  // or "src/**/*"
+  ]
+}
